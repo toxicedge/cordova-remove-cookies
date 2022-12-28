@@ -31,7 +31,7 @@
 {
     NSHTTPCookie *cookie;
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    // cookie issue did not appear on iOS, code is dormant
+    // cookie removal not done on iOS, code dormant
     // for (cookie in [storage cookies]) {
     //     [storage deleteCookie:cookie];
     // }

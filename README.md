@@ -1,7 +1,6 @@
-Phonegap Cookies Plugin
-=======
+# Cordova Remove Cookies UKG
 
-Phonegap/Cordova plugin that allows you to clear cookies of the webview. Use it for logging out the user, restart analytics session etc.
+Phonegap/Cordova plugin that allows you to clear session cookies of the (android) webview. Use it for logging out the user, restart analytics session etc.
 
 ## Why a plugin?
 
@@ -19,11 +18,11 @@ $ phonegap local plugin add https://github.com/bez4pieci/Phonegap-Cookies-Plugin
 ## Usage
 
 ```javascript
-window.cookies.clear(function() {
-	console.log('Cookies cleared!');
+window.cookies.clear(function () {
+  console.log("Cookies cleared!");
 });
 ```
 
-- - -
+---
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/bez4pieci/phonegap-cookies-plugin/trend.png)](https://bitdeli.com/free "Bitdeli Badge")

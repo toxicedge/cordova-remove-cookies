@@ -1,8 +1,8 @@
 {
   "version": "0.0.2",
-  "name": "cordova-remove-cookies",
-  "cordova_name": "Cookies",
-  "description": "Cordova Cookies Plugin",
+  "name": "cordova-remove-cookies-ukg",
+  "cordova_name": "RemoveCookiesUkg",
+  "description": "Cordova Cookies Plugin UKG",
   "license": "Apache 2.0",
   "keywords": [
     "cordova",
