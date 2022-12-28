@@ -23,7 +23,6 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-
 package com.bez4pieci.cookies;
 
 import org.apache.cordova.CallbackContext;
@@ -33,23 +32,29 @@ import org.json.JSONException;
 
 import android.util.Log;
 import android.webkit.CookieManager;
+import android.webkit.ValueCallback;
 
 public class Cookies extends CordovaPlugin {
-	
-	private final String TAG = "CookiesPlugin";
-	
-	@Override
+
+    private final String TAG = "UkgCookiesPlugin";
+
+    @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if ("clear".equals(action)) {
-            this.clear();
-            callbackContext.success();
+            this.clear(callbackContext);
             return true;
         }
-        return false;  // Returning false results in a "MethodNotFound" error.
+        return false;
     }
-	
-	public void clear() {
-		Log.v(TAG, "Clearing cookies...");
-        CookieManager.getInstance().removeAllCookies(null);
+
+    public void clear(CallbackContext callbackContext) {
+        Log.i(TAG, "Clearing session cookies...");
+        CookieManager.getInstance().removeSessionCookies(new ValueCallback<Boolean>() {
+            @Override
+            public void onReceiveValue(Boolean cleared) {
+                Log.i(TAG, "Session cookie clearing complete. Cleared=[" + cleared + "]");
+                callbackContext.success();
+            }
+        });
     }
 }

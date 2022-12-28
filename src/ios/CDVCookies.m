@@ -31,9 +31,10 @@
 {
     NSHTTPCookie *cookie;
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (cookie in [storage cookies]) {
-        [storage deleteCookie:cookie];
-    }
+    // cookie issue did not appear on iOS, code is dormant
+    // for (cookie in [storage cookies]) {
+    //     [storage deleteCookie:cookie];
+    // }
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
